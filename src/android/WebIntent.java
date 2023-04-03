@@ -275,9 +275,9 @@ public class WebIntent extends CordovaPlugin {
         if (type != null && uri != null) {
             i.setDataAndType(uri, type); //Fix the crash problem with android 2.3.6
             
-            if (type.equals("application/pdf")) {
+            // if (type.equals("application/pdf")) {
                 i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); // For Android 7.0
-            }
+            // }
         } else {
             if (type != null) {
                 i.setType(type);
