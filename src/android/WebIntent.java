@@ -262,13 +262,13 @@ public class WebIntent extends CordovaPlugin {
         
         // For Android 7.0
         // add FileProvider
-        if (type.equals("application/pdf")) {
+        // if (type.equals("application/pdf")) {
             MyFileProvider myFileProvider = new MyFileProvider();
             File file = new File(uri.toString().replace("content://", ""));
             // Log.e("FileProvider", "extras:" + extras + "  URI:" + uri.toString() +"  file.exists:" + file.exists());
             uri = myFileProvider.getUriForFile(this.cordova.getActivity().getApplicationContext(),
                                                this.cordova.getActivity().getApplicationContext().getPackageName(), file);
-        }
+        // }
         
         Intent i = (uri != null ? new Intent(action, uri) : new Intent(action));
         
